@@ -4,7 +4,10 @@ import { ThemeProvider, createTheme } from '@mui/material'
 
 const theme = createTheme({
   typography: {
-    fontFamily: 'Nunito, sans-serif'
+    fontFamily: 'Nunito, sans-serif',
+    body2: {
+      lineHeight: '1.2'
+    }
   }
 })
 

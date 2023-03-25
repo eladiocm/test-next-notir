@@ -1,0 +1,6 @@
+.imagenAdaptable {
+  width: calc(100vw * 0.27);
+  height: auto;
+  position: absolute;
+
+}
