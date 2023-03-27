@@ -1,7 +1,0 @@
-.mainContainer {
-  position: relative;
-  height: 100vh;
-  background: rgb(255, 255, 255);
-  background: linear-gradient(147deg, rgba(255, 255, 255, 1) 25%, rgba(216, 246, 255, 1) 70%, rgba(158, 209, 255, 1) 100%);
-  overflow-x: hidden;
-}

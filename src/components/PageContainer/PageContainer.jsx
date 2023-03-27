@@ -1,12 +1,18 @@
-import styles from './PageContainer.module.css'
 import { LooperBottom, LooperTop } from '../Looper/Looper'
+import { useRouter } from 'next/router'
 
 const PageContainer = ({ children, display, alignItems, justifyContent }) => {
+  const router = useRouter()
+  const rutaActual = router.pathname
+
   return (
-    <main className={styles.mainContainer} style={{ display: `${display}`, alignItems: `${alignItems}`, justifyContent: `${justifyContent}` }}>
-      <LooperTop />
-      <LooperBottom />
+    <main className='mainContainer' style={{ display: `${display}`, alignItems: `${alignItems}`, justifyContent: `${justifyContent}` }}>
       {children}
+      {rutaActual === '/login' && (
+        <>
+          <LooperTop />
+          <LooperBottom />
+        </>)}
     </main>
   )
 }

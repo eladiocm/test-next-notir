@@ -9,3 +9,52 @@
 body {
   font-family: 'Nunito', sans-serif;
 }
+
+.start {
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 500;
+  background-color: #096DCA;
+  color: #fff;
+  padding-top: 6px;
+  width: 150px;
+  height: 45px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.start:hover {
+  background-color: #096dcaea;
+  transform: scale(1.01);
+}
+
+.imagenAdaptable {
+  width: calc(100vh * 0.65);
+  height: auto;
+  position: absolute;
+  bottom: calc(100vh * 0.02);
+  left: -20px;
+}
+
+.imagenAdaptableRegister {
+  width: calc(100vh * 0.86);
+  height: auto;
+
+}
+
+.mainContainer {
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 1) 35%, rgba(216, 246, 255, 1) 85%, rgb(159, 210, 255) 100%);
+  overflow-x: hidden;
+}
+
+.inputActivation {
+  background-color: #F2F2F2;
+}
+
+.inputActivation input:focus {
+  background-color: #fff;
+  caret-color: #096DCA;
+  border-color: #096DCA;
+}

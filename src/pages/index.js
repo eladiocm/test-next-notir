@@ -3,6 +3,8 @@ import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css' */
 import PageContainer from '@/components/PageContainer/PageContainer'
+import { Box } from '@mui/material'
+import Link from 'next/link'
 
 export default function Home () {
   return (
@@ -13,7 +15,19 @@ export default function Home () {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <PageContainer />
+      <PageContainer display='flex' alignItems='center' justifyContent='center'>
+        <Box
+          display='flex'
+          flexDirection='column'
+          alignItems='center'
+          justifyContent='center'
+          gap='50px'
+          sx={{ width: '300px', height: '300px', background: '#fff', boxShadow: '0px 8px 20px rgba(9, 109, 202, 0.08)', borderRadius: '5px' }}
+        >
+          <Link href='/login' className='start'>Login</Link>
+          <Link href='/register' className='start'>Register</Link>
+        </Box>
+      </PageContainer>
     </>
   )
 }
