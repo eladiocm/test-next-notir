@@ -16,23 +16,70 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+# Test-Next-Notir
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Este proyecto es un test técnico realizado utilizando Next.js y Material-UI en el frontend. Su objetivo principal es demostrar habilidades en el desarrollo frontend y ampliar conocimientos sobre Material-UI.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Tecnologías
 
-## Learn More
+Este proyecto utiliza las siguientes tecnologías:
 
-To learn more about Next.js, take a look at the following resources:
+- Next.js 13.2.4
+- Material-UI 5.11.14
+- React 18.2.0
+- Emotion 11.10.6
+- Yup 1.0.2
+- Nunito font
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Requisitos previos
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Antes de comenzar a ejecutar el proyecto, asegúrate de tener instalado lo siguiente:
 
-## Deploy on Vercel
+- Node.js 12.x o superior
+- NPM 6.x o superior
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Instalación
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Siga estos pasos para configurar y ejecutar el proyecto localmente:
+
+1. Clonar el repositorio:
+
+```bash
+git clone https://github.com/tu_usuario/test-next-notir.git
+```
+
+2. Entrar en el directorio del proyecto:
+
+```bash
+cd test-next-notir
+```
+
+3. Instalar las dependencias:
+
+```bash
+npm install
+```
+
+## Ejecución de la aplicación
+
+Para ejecutar la aplicación en modo desarrollo, ejecute el siguiente comando:
+
+```bash
+npm run dev
+```
+
+La aplicación estará accesible en `http://localhost:3000`.
+
+## Estructura del proyecto
+
+El proyecto sigue la estructura de archivos estándar de Next.js:
+
+- La carpeta `pages` contiene las páginas principales de la aplicación.
+- La carpeta `components` contiene los componentes reutilizables de React.
+- La carpeta `public` contiene imágenes y otros recursos estáticos.
+
+## Contribuciones
+
+Si deseas colaborar en el proyecto, por favor, crea una "issue" en el repositorio de GitHub o envía una "Pull Request".
+
+Asegúrese de seguir las directrices de estilo y buenas prácticas del proyecto, utilizando [Standard](https://standardjs.com/) y las herramientas de ESLint proporcionadas en el proyecto.
