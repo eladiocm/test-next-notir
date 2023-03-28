@@ -50,7 +50,8 @@ const CharacterInputs = ({ setDisabled, inputs, setInputs }) => {
             sx={{
               ml: i !== 0 ? 1 : 0,
               width: '56px',
-              height: '56px'
+              height: '56px',
+              fontSize: '24px'
             }}
             className='inputActivation'
           />

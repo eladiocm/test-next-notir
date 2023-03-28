@@ -44,7 +44,7 @@ export const FormRegister = ({ setStepRegister, stepRegister }) => {
   const onSubmit = (event) => {
     event.preventDefault()
     RegisterValidate.validate(inputs).then(() => {
-      getSuccess('Primer paso completad')
+      getSuccess('Primer paso completado')
       console.log(inputs)
       setStepRegister((prevState) => ({ ...prevState, step: '2', email: inputs.email }))
     }).catch((error) => {

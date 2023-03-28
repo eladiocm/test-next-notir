@@ -60,8 +60,11 @@ body {
   overflow-x: hidden;
 }
 
-.inputActivation {
+.inputActivation input {
   background-color: #F2F2F2;
+  padding: 11px;
+  padding-left: 20px;
+  font-size: 24px;
 }
 
 .inputActivation input:focus {
