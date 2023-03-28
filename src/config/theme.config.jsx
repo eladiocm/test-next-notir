@@ -62,9 +62,25 @@ const theme = createTheme({
         style: {
           textTransform: 'none',
           boxShadow: 'none',
-          borderRadius: '4px',
-          color: '#FFFFFF'
-
+          borderRadius: '4px'
+        }
+      }
+    },
+    MuiAlert: {
+      defaultProps: {
+        style: {
+          borderRadius: '0.8em',
+          fontSize: '1em'
+        }
+      },
+      styleOverrides: {
+        standardError: {
+          border: '1px solid #f44336',
+          background: 'rgba(244,67,54,0.1)'
+        },
+        standardSuccess: {
+          border: '1px solid #66bb6a',
+          background: 'rgba(102,187,106,0.1)'
         }
       }
     }

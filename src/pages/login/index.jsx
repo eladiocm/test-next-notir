@@ -17,7 +17,7 @@ const Login = () => {
               <Typography variant='h1' sx={{ ml: '14px', fontStyle: 'italic' }}>Notir</Typography>
             </Box>
           </Box>
-          <Image src={illustration} alt='Ilustración' priority className='imagenAdaptable' />
+          <Image src={illustration} alt='Ilustración' priority className='imagenAdaptable' as='image' />
         </Grid>
         <Grid item md={6} display='flex' alignItems='center' justifyContent='center'>
           <FormLogin />

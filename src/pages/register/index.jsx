@@ -8,7 +8,7 @@ import { FormRegister } from '@/components/FormRegister/FormRegister'
 import { FormFinishRegister } from '@/components/FormFinishRegister/FormFinishRegister'
 
 function Register () {
-  const [stepRegister, setStepRegister] = useState(1)
+  const [stepRegister, setStepRegister] = useState({ step: '1', email: '' })
   return (
     <PageContainer>
       <Grid container>
@@ -16,9 +16,9 @@ function Register () {
           <Image src={illustration} alt='Ilustración' priority className='imagenAdaptableRegister' />
         </Grid>
         <Grid item md={5} sx={{ backgroundColor: '#fff' }} display='flex' alignItems='center' justifyContent='center'>
-          {stepRegister === 1 && <FormRegister setStepRegister={setStepRegister} />}
-          {stepRegister === 2 && <FormActivation setStepRegister={setStepRegister} />}
-          {stepRegister === 3 && <FormFinishRegister setStepRegister={setStepRegister} />}
+          {stepRegister.step === '1' && <FormRegister setStepRegister={setStepRegister} stepRegister={stepRegister} />}
+          {stepRegister.step === '2' && <FormActivation setStepRegister={setStepRegister} stepRegister={stepRegister} />}
+          {stepRegister.step === '3' && <FormFinishRegister />}
         </Grid>
       </Grid>
     </PageContainer>

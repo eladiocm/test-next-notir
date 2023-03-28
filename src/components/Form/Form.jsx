@@ -1,4 +1,5 @@
-import { Box, Button, Typography } from '@mui/material'
+import { Box, Typography } from '@mui/material'
+import CustomButton from '../CustomButton/CustomButton'
 
 function Form ({
   title,
@@ -7,9 +8,11 @@ function Form ({
   onSubmit,
   children,
   disableButton,
-  fontSize = '14px',
-  wb = '100%',
-  hb = '33px'
+  fontSize,
+  wb,
+  hb,
+  textButton,
+  type = 'submit'
 }) {
   return (
     <Box
@@ -26,22 +29,14 @@ function Form ({
       <>
         {children}
       </>
-      <Button
-        sx={{
-          fontSize: '14px',
-          height: '33px',
-          width: '100%',
-          '&.Mui-disabled': {
-            backgroundColor: '#CCCCCC',
-            color: '#808080'
-          }
-        }}
-        type='submit'
-        variant='contained'
-        disabled={disableButton}
-      >
-        Confirmar
-      </Button>
+      <CustomButton
+        disableButton={disableButton}
+        fontSize={fontSize}
+        wb={wb}
+        hb={hb}
+        textButton={textButton}
+        type={type}
+      />
     </Box>
   )
 }

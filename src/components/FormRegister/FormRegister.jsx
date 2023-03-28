@@ -4,10 +4,13 @@ import { useEffect, useState } from 'react'
 import CustomInput from '../CustomInput/CustomInput'
 import { MailIcon, PhoneIcon } from '../Icons'
 import Form from '../Form/Form'
+import { RegisterValidate } from '@/util/validateForm'
+import { useNotification } from '@/context/notification.context'
 
-export const FormRegister = ({ setStepRegister }) => {
+export const FormRegister = ({ setStepRegister, stepRegister }) => {
   const [inputs, setInputs] = useState({ firstName: '', secondName: '', email: '', phone: '', agency: '' })
   const [disableButton, setDisableButton] = useState(true)
+  const { getError, getSuccess } = useNotification()
 
   useEffect(() => {
     const allFieldsFilled = Object.values(inputs).every((inputValue) => inputValue !== '')
@@ -17,20 +20,16 @@ export const FormRegister = ({ setStepRegister }) => {
   const handleInputChange = (event) => {
     const { name, value } = event.target
     if (name === 'phone') {
-      const valueN = value.replace(/\D/g, '') // Solo conserva dígitos
-      if (valueN.length <= 18) {
-        let formattedValue = ''
-        for (let i = 0; i < valueN.length; i++) {
-          formattedValue += valueN[i]
-          if (
-            (i === 2 && valueN.length > 3) ||
-            (i === 5 && valueN.length > 6) ||
-            (i > 7 && i % 4 === 1)
-          ) {
-            formattedValue += ' '
-          }
+      let number = value.replace(/\D/g, '')
+      if (number.length <= 14) {
+        if (number.length > 3 && number.length <= 6) {
+          number = number.replace(/(\d{3})/, '$1 ')
+        } else if (number.length >= 7 && number.length <= 10) {
+          number = number.replace(/(\d{3})(\d{3})/, '$1 $2 ')
+        } else if (number.length >= 11) {
+          number = number.replace(/(\d{3})(\d{3})(\d{4})/, '$1 $2 $3 ')
         }
-        setInputs((prevState) => ({ ...prevState, [name]: formattedValue }))
+        setInputs((prevState) => ({ ...prevState, [name]: number }))
       }
     } else if (name === 'email') {
       const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
@@ -44,13 +43,18 @@ export const FormRegister = ({ setStepRegister }) => {
 
   const onSubmit = (event) => {
     event.preventDefault()
-    console.log(inputs)
-    setStepRegister(2)
+    RegisterValidate.validate(inputs).then(() => {
+      getSuccess('Primer paso completad')
+      console.log(inputs)
+      setStepRegister((prevState) => ({ ...prevState, step: '2', email: inputs.email }))
+    }).catch((error) => {
+      getError(error.message)
+    })
   }
 
   return (
     <Box display='flex' alignItems='center' flexDirection='column' gap='50px' width='300px'>
-      <Form title='Regístrate' onSubmit={onSubmit} disableButton={disableButton}>
+      <Form title='Regístrate' onSubmit={onSubmit} disableButton={disableButton} textButton='Continuar'>
         <Box display='flex' alignItems='center' justifyContent='center' gap='20px' flexDirection='column' sx={{ width: '300px' }}>
           <CustomInput
             size='small'
@@ -72,7 +76,6 @@ export const FormRegister = ({ setStepRegister }) => {
             size='small'
             label='Correo electrónico'
             name='email'
-            type='email'
             placeholder='Correo electrónico'
             onChange={handleInputChange}
             value={inputs.email}

@@ -4,12 +4,15 @@ import { VisibilityOutlined, VisibilityOffOutlined } from '@mui/icons-material'
 import CustomInput from '../CustomInput/CustomInput'
 import Form from '../Form/Form'
 import { useRouter } from 'next/router'
+import { RegisterPasswordValidate } from '@/util/validateForm'
+import { useNotification } from '@/context/notification.context'
 
-export const FormFinishRegister = ({ setStepRegister }) => {
+export const FormFinishRegister = () => {
   const [showPassword, setShowPassword] = useState(false)
   const [showPasswordVerify, setShowPasswordVerify] = useState(false)
   const [inputs, setInputs] = useState({ password: '', passwordVerify: '' })
   const [disableButton, setDisableButton] = useState(true)
+  const { getError, getSuccess } = useNotification()
 
   const router = useRouter()
 
@@ -35,12 +38,17 @@ export const FormFinishRegister = ({ setStepRegister }) => {
 
   const onSubmit = (event) => {
     event.preventDefault()
-    console.log(inputs)
-    router.push('/')
+    RegisterPasswordValidate.validate(inputs).then(() => {
+      getSuccess('Bienvenido')
+      console.log(inputs)
+      router.push('/')
+    }).catch((error) => {
+      getError(error.message)
+    })
   }
 
   return (
-    <Form title='Estamos terminando' onSubmit={onSubmit} disableButton={disableButton}>
+    <Form title='Estamos terminando' onSubmit={onSubmit} disableButton={disableButton} textButton='Confirmar'>
       <Box sx={{ width: '100%' }} display='flex' flexDirection='column' gap='20px'>
         <CustomInput
           size='small'

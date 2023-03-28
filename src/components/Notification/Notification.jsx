@@ -5,13 +5,13 @@ function Notification ({ open, msg, severity, handleClose }) {
     <div>
       <Snackbar
         anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-        autoHideDuration={2500}
+        autoHideDuration={3000}
         open={open}
         onClose={handleClose}
       >
         <Alert
           onClose={handleClose}
-          security={severity}
+          severity={severity}
         >
           <Typography>{msg}</Typography>
         </Alert>

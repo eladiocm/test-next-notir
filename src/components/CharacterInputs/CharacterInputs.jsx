@@ -1,9 +1,7 @@
-import React, { useState, useEffect, createRef } from 'react'
+import React, { useEffect, createRef } from 'react'
 import TextField from '@mui/material/TextField'
 
-const CharacterInputs = ({ setDisabled }) => {
-  const [inputs, setInputs] = useState(['', '', '', ''])
-
+const CharacterInputs = ({ setDisabled, inputs, setInputs }) => {
   const inputRefs = inputs.map(() => createRef())
 
   const handleChange = (e, index) => {

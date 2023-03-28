@@ -13,13 +13,19 @@ export const NotificationProvider = ({ children }) => {
     setOpen(true)
     setMsg(msg)
   }
+  const getSuccess = (msg) => {
+    setSeverity('success')
+    setOpen(true)
+    setMsg(msg)
+  }
 
   const handleClose = () => {
     setOpen(false)
   }
 
   const value = {
-    getError
+    getError,
+    getSuccess
   }
 
   return (
