@@ -42,6 +42,7 @@ const CharacterInputs = ({ setDisabled }) => {
           <TextField
             key={i}
             value={input}
+            color='info'
             required
             onChange={(e) => { handleChange(e, i) }}
             onKeyDown={(e) => { handleKeyDown(e, i) }}

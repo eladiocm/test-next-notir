@@ -8,10 +8,10 @@ export const FormActivation = ({ setStepRegister }) => {
 
   return (
     <Box display='flex' alignItems='center' justifyContent='center' gap='50px' flexDirection='column' component='form'>
-      <Typography variant='body2' sx={{ fontSize: '40px', fontWeight: '700', color: '#12518C' }}>Activación</Typography>
+      <Typography variant='h1' sx={{ fontSize: '40px' }}>Activación</Typography>
       <Box display='flex' alignItems='center' justifyContent='center' gap='5px' flexDirection='column'>
-        <Typography variant='body1'>Hemos enviado un código de activación a:</Typography>
-        <Chip label='correo@correo.com' size='small' />
+        <Typography variant='subtitle1' sx={{ color: '#121212', fontWeight: '400' }}>Hemos enviado un código de activación a:</Typography>
+        <Chip label='correo@correo.com' size='small' sx={{ color: '#828282', fontWeight: '400' }} />
       </Box>
       <CharacterInputs setDisabled={setDisabled} />
       <Button

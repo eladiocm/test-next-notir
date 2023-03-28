@@ -28,6 +28,17 @@ body {
   transform: scale(1.01);
 }
 
+.forgetPassword {
+  font-size: 16px;
+  font-weight: 700;
+  color: #096DCA;
+  text-decoration: none;
+}
+
+.forgetPassword:hover {
+  text-decoration: underline;
+}
+
 .imagenAdaptable {
   width: calc(100vh * 0.65);
   height: auto;
